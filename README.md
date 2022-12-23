@@ -1,3 +1,3 @@
-# C-Projects
-Some of the C Projects that I'm making are located in this Repository.
-I'm a Computer Science student and while I'm doing my lesson, I also like implementing some exercises ideas and adding features while testing my knowledge.
+# C/C++ Projects
+Some of the C and C++ Projects that I'm making are located in this Repository.
+I'm a Computer Science student from Greece and I like implementing some exercise ideas and adding features to them while testing my knowledge. In this repository you'll find these scripts which I continue to update and make better.
