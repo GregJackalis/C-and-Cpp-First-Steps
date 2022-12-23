@@ -80,8 +80,9 @@ int main() {
     car carlist[20];
     int counter = 0;
     char choice;
+    int i = 0;
     
-    for (int i = 0; i < 20; i++) {
+    do {
         counter++;
         carlist[i].readHP(counter);
         carlist[i].readCC(counter);
@@ -94,14 +95,12 @@ int main() {
         carlist[i].discount();
         carlist[i].accelarate();
         
+        i++;
+        
         cout << "Do you want to make another car? If yes type \"Y\" (Upper Limit for cars that can be made is 20 cars)";
         cin >> choice;
         
-        if (choice != 'y' && choice != 'Y' ) {
-            goto jump;
-        }
-    }
-    
-    jump:
-    printingCarMessages(carlist, counter);
+    } while((choice == 'y' || choice == 'Y' ) && (i <= 20));
+        
+        printingCarMessages(carlist, counter);
 }
