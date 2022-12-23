@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct customer {
+struct citizen {
     char name[40];
     char address[40];
-    int streetNumber;
     char email[40];
     int afm;
     float amount;
@@ -13,7 +12,7 @@ struct customer {
 //global variables
 int personCounter = 0;
 
-void gettingInformation(struct customer list[100]) {
+void gettingInformation(struct citizen list[100]) {
     char choice;
     for (int i = 0; i < 100; i++) {
         printf("Give information for Person %d:\n\n", (i+1));
@@ -25,8 +24,6 @@ void gettingInformation(struct customer list[100]) {
         printf("\nType in the address for person %d: ", (i+1));
         scanf(" ");
         fgets(list[i].address, 40, stdin);
-        printf("\nType in the Street Number for person %d: ", (i+1));
-        scanf("%d", &list[i].streetNumber);
                 
         printf("\nType in the email for person %d: ", (i+1));
         scanf(" ");
@@ -47,13 +44,12 @@ void gettingInformation(struct customer list[100]) {
     }
 }
 
-void printingInformation (struct customer list[100]) {
-    printf("\n\n\tINFO GIVEN\n------------------");
+void printingInformation (struct citizen list[100]) {
+    printf("\n\n\tCITIZENS REGISTERED\n------------------");
     for (int i = 0; i < personCounter; i++) {
         printf("\nFOR NUMBER %d", (i+1));
         printf("\nName: %s", list[i].name);
         printf("Address: %s", list[i].address);
-        printf("Street Number: %d \n", list[i].streetNumber);
         printf("Email: %s", list[i].email);
         printf("AFM: %d", list[i].afm);
         printf("\nAmount: €%.2f \n", list[i].amount);
@@ -62,9 +58,18 @@ void printingInformation (struct customer list[100]) {
 }
                  
 int main() {
-    struct customer list[100];
+    struct citizen list[100];
+    char choice;
     
     gettingInformation(list);
-    printingInformation(list);
+    
+    printf("\nWould you like to print out the Registry Results?\nPress \"Y\" for Yes and \"N\" for No: ");
+    scanf(" %c", &choice);
+    if (choice == 'y' || choice == 'Y') {
+        printingInformation(list);
+    } else {
+        printf("Thank you for using this program! Have a good day!");
+        exit(0);
+    }
 
 }
