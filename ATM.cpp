@@ -9,6 +9,12 @@ public:
     int withdraw = 0;
     char choice = 0;
     
+    ATM() {
+        balance = 0;
+        deposit = 0;
+        withdraw = 0;
+        choice = 0;
+    }
     double transaction () {
         cout << "\n\nFOR WITHDRAW PLEASE PRESS \"W\" \nFOR DEPOSIT PLEASE PRESS \"D\" \nTO SEE YOUR ACCOUNT'S BALANCE PLEASE PRESS \"C\" \n: ";
         cin >> choice;
